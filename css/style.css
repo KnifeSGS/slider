@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -10,58 +10,93 @@
     --darkgrey: rgb(113, 113, 113);
 }
 
-
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+}
 
 .slideshow__container {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     max-width: 80%;
-    margin: 2rem;
+    position: absolute;
+    min-width: 400px;
+    max-width: 900px;
+    overflow: hidden;
 }
 
 .slides {
     display: none;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 }
 
 .slideshow__buttons {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    top: -38vmin;
+    position: relative;
+    width: 100%;
 }
 
 .button__left, .button__right {
+    position: relative;
+    background-color: transparent;
+    padding: 2rem;
     cursor: pointer;
     display: flex;
-    justify-content: start;
     align-items: center;
     color: var(--white);
     transition: .5s ease;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
 }
 
 .button__right {
-    justify-self: end;
+    align-self: flex-end;
 }
 
 .button__left:hover, .button__right:hover {
-    
+    color: var(--darkgrey);
 }
 
 .slide__caption {
-    color: var(--white);
+    color: var(--grey);
     font-size: .8rem;
     display: flex;
-    text-align: center;
+    justify-content: center;
+    position: relative;
+    top: -4vmin;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px var(--darkgrey);
+
 }
 
 .slides__counter {
     display: flex;
-    color: var(--white);
+    position: relative;
+    top: 2.5vmin;
+    left: 1vmin;
+    color: var(--grey);
     font-size: .8rem;
 }
 
-.slideshow__progressBar {
+.slideshow__indicator {
     display: flex;
     flex-direction: row;
     align-self: center;
+    position: relative;
+    top: -10vmin;
 }
 
 .dot {
