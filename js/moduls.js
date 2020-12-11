@@ -3,7 +3,6 @@
 const container = document.querySelector('.slideshow__container');
 let slides;
 let dots;
-let inter;
 const btns = document.querySelector('.slideshow__buttons');
 const backBtn = document.querySelector('.button__left');
 const fwdBtn = document.querySelector('.button__right')
@@ -21,7 +20,7 @@ let imgArr = [
     'Tűzhal',
 ];
 
-const chooseImg = (imgHeight) => {
+export const chooseImg = (imgHeight) => {
     let size;
     if (imgHeight) {
         size = imgHeight;
@@ -44,7 +43,7 @@ const chooseImg = (imgHeight) => {
     }
 }
 
-const showImg = () => {
+export const showImg = () => {
     slides = document.querySelectorAll('.slides');
     dots = document.querySelectorAll('.dot');
     for (let i = 0; i < slides.length; i += 1) {
@@ -59,7 +58,7 @@ const showImg = () => {
     dots[slideIndex-1].classList.add('active')
 }
 
-const shiftImg = () => {
+export const shiftImg = () => {
     backBtn.addEventListener('click', () => {
         slideIndex -= 2;
         showImg();
@@ -69,7 +68,7 @@ const shiftImg = () => {
     })
 }
 
-const changeImgByDots = () => {
+export const changeImgByDots = () => {
     dots = document.querySelectorAll('.dot');
     dots.forEach(item => item.addEventListener('click', () => {
         switch (item.className) {
@@ -108,13 +107,3 @@ const changeImgByDots = () => {
         }
     }))
 }
-
-const playSlides = (frameTime, imgHeight) => {
-    chooseImg(imgHeight);
-    shiftImg();
-    changeImgByDots();
-    showImg();
-    setInterval(showImg, frameTime);
-};
-
-playSlides(2000, '400px');
