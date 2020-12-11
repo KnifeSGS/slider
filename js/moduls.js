@@ -72,7 +72,40 @@ const shiftImg = () => {
 const changeImgByDots = () => {
     dots = document.querySelectorAll('.dot');
     dots.forEach(item => item.addEventListener('click', () => {
-        item.classList.add('effect')
+        switch (item.className) {
+            case 'dot 1':
+                slideIndex = 0;
+                showImg();
+                break;
+            case 'dot 2':
+                slideIndex = 1;
+                showImg();
+                break;
+            case 'dot 3':
+                slideIndex = 2;
+                showImg();
+                break;
+            case 'dot 4':
+                slideIndex = 3;
+                showImg();
+                break;
+            case 'dot 5':
+                slideIndex = 4;
+                showImg();
+                break;
+            case 'dot 6':
+                slideIndex = 5;
+                showImg();
+                break;
+            case 'dot 7':
+                slideIndex = 6;
+                showImg();
+                break;
+            case 'dot 8':
+                slideIndex = 7;
+                showImg();
+                break;
+        }
     }))
 }
 
@@ -85,34 +118,3 @@ const playSlides = (frameTime, imgHeight) => {
 };
 
 playSlides(2000, '400px');
-
-/* const showSlides = (n) => {
-    // const slides = document.getElementsByClassName('slides');
-    const dots = document.getElementsByClassName('dot');
-    if (n > slides.length) {
-        slideIndex = 1;
-    }
-
-    if (n < 1) {
-        slideIndex = slides.length
-    }
-
-    for (let i = 0; i < slides.length; i += 1) {
-        slides[i].style.display = 'none';
-    }
-
-    slideIndex += 1;
-    if (slideIndex > slides.length) {
-        slideIndex = 1
-    }
-    slides[slideIndex-1].style.display = 'flex';
-    setTimeout(showSlides, 2000);
-
-    for (let i = 0; i < dots.length; i += 1) {
-        dots[i].classList.toggle('active');
-    }
-    slides[slideIndex-1].style.display = 'flex';
-    dots[slideIndex-1].classList.toggle('active')
-}
-
-showSlides(slideIndex); */
