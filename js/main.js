@@ -1,4 +1,5 @@
-import {chooseImg, shiftImg, changeImgByDots, showImg} from './moduls.js'
+import {shiftImg, changeImgByDots, showImg} from './moduls.js'
+import {chooseImg} from './images.js'
 
 const playSlides = (frameTime, imgHeight) => {
     chooseImg(imgHeight);

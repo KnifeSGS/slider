@@ -1,47 +1,11 @@
 'use strict';
 
-const container = document.querySelector('.slideshow__container');
-let slides;
-let dots;
-const btns = document.querySelector('.slideshow__buttons');
+
 const backBtn = document.querySelector('.button__left');
 const fwdBtn = document.querySelector('.button__right')
-const indicator = document.querySelector('.slideshow__indicator');
-const images = document.querySelectorAll('.image');
+let slides;
+let dots;
 let slideIndex = 0;
-let imgArr = [
-    'Patak',
-    'Lebegő levél',
-    'Levendula',
-    'Rét',
-    'Gomba',
-    'Fenyő',
-    'Toboz',
-    'Tűzhal',
-];
-
-export const chooseImg = (imgHeight) => {
-    let size;
-    if (imgHeight) {
-        size = imgHeight;
-    } else {
-        size = 'auto';
-    }
-    for (let i = 0; i < imgArr.length; i += 1) {
-        const slideTemplate = `
-        <div class="slides">
-            <div class="slides__counter">${i+1} / ${imgArr.length}</div>
-            <img src="./img/${i+1}.jpg" alt="${imgArr[i]}" style="width: 100%; height: ${size};" class="image">
-            <div class="slide__caption">${imgArr[i]}</div>
-        </div>
-        `;
-        const indicatorTemplate = `
-            <div class="dot ${i+1}"></div>
-        `
-        btns.insertAdjacentHTML('beforeBegin', slideTemplate);
-        indicator.insertAdjacentHTML('beforeEnd', indicatorTemplate);
-    }
-}
 
 export const showImg = () => {
     slides = document.querySelectorAll('.slides');
